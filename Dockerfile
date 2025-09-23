@@ -7,7 +7,7 @@ ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
-COPY package.json bun.lockb ./
+COPY package.json ./
 RUN bun install --production --frozen-lockfile
 ENV PATH=/opt/node_modules/.bin:$PATH
 
