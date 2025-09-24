@@ -423,8 +423,7 @@ export interface ApiNotificationTemplateNotificationTemplate
     draftAndPublish: true;
   };
   attributes: {
-    bodyHtml: Schema.Attribute.Blocks;
-    bodyHtmllon: Schema.Attribute.Text;
+    bodyHtml: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
