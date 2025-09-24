@@ -14,7 +14,7 @@
     "subject": {
       "type": "string"
     },
-    "bodyHtmlLong": {
+    "bodyHtml": {
       "type": "blocks"
     },
     "type": {
@@ -28,7 +28,7 @@
         "EmailVerificationOtpEmail"
       ]
     },
-    "bodyHtml": {
+    "bodyHtmllon": {
       "type": "text"
     }
   }
