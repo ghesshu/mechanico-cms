@@ -435,6 +435,16 @@ export interface ApiNotificationTemplateNotificationTemplate
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     subject: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      [
+        'PasswordResetEmail',
+        'NewRequestReceivedEmail',
+        'NewRequestReceivedNotification',
+        'QuoteAcceptedEmail',
+        'QuoteAcceptedNotification',
+        'EmailVerificationOtpEmail',
+      ]
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

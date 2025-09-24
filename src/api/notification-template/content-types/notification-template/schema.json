@@ -16,6 +16,17 @@
     },
     "bodyHtml": {
       "type": "blocks"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "PasswordResetEmail",
+        "NewRequestReceivedEmail",
+        "NewRequestReceivedNotification",
+        "QuoteAcceptedEmail",
+        "QuoteAcceptedNotification",
+        "EmailVerificationOtpEmail"
+      ]
     }
   }
 }
