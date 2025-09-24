@@ -14,7 +14,7 @@
     "subject": {
       "type": "string"
     },
-    "bodyHtml": {
+    "bodyHtmlLong": {
       "type": "blocks"
     },
     "type": {
@@ -27,6 +27,9 @@
         "QuoteAcceptedNotification",
         "EmailVerificationOtpEmail"
       ]
+    },
+    "bodyHtml": {
+      "type": "text"
     }
   }
 }
