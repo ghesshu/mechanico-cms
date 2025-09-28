@@ -33,8 +33,8 @@ RUN chown -R node:node /opt/app
 
 USER node
 
-RUN npm run build
+# RUN npm run build
 
 EXPOSE 1337
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
