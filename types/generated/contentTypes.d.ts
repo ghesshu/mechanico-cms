@@ -411,46 +411,6 @@ export interface ApiCustomerCustomer extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiNotificationTemplateNotificationTemplate
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'notification_templates';
-  info: {
-    displayName: 'Notification Template';
-    pluralName: 'notification-templates';
-    singularName: 'notification-template';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bodyHtml: Schema.Attribute.Text;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::notification-template.notification-template'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    subject: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<
-      [
-        'PasswordResetEmail',
-        'NewRequestReceivedEmail',
-        'NewRequestReceivedNotification',
-        'QuoteAcceptedEmail',
-        'QuoteAcceptedNotification',
-        'EmailVerificationOtpEmail',
-      ]
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiServiceService extends Struct.CollectionTypeSchema {
   collectionName: 'services';
   info: {
@@ -1118,7 +1078,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::customer.customer': ApiCustomerCustomer;
-      'api::notification-template.notification-template': ApiNotificationTemplateNotificationTemplate;
       'api::service.service': ApiServiceService;
       'api::sub-service.sub-service': ApiSubServiceSubService;
       'api::subscription-benefit.subscription-benefit': ApiSubscriptionBenefitSubscriptionBenefit;
