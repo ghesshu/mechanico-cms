@@ -12,5 +12,6 @@ export default ({ env }) => ({
 
   // 🔄 CRUCIAL: Enable proxy support if you are behind a load balancer (NGINX, AWS, etc.)
   // This allows Strapi to trust headers like 'X-Forwarded-Proto: https'
-  proxy: env.bool("IS_PROXIED", false),
+  //
+  proxy: { koa: true },
 });
