@@ -14,15 +14,15 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-ARG NODE_ENV=development
+ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
 
 COPY package.json package-lock.json* ./
 
-RUN npm install 
-# RUN npm install --production
+# RUN npm install 
+RUN npm install --production
 
 ENV PATH=/opt/node_modules/.bin:$PATH
 
@@ -34,8 +34,8 @@ RUN chown -R node:node /opt/app
 
 USER node
 
-# RUN npm run build
+RUN npm run build
 
 EXPOSE 1337
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
