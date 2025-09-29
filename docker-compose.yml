@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: mechanico-cms-app
+    restart: unless-stopped
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/app/package.json
+      - ./public/uploads:/opt/app/public/uploads
+      - strapi_data:/opt/app/data
+    ports:
+      - 3081:1337
+    networks:
+      - mechanico-network
+
+volumes:
+  strapi_data:
+    driver: local
+
+networks:
+  mechanico-network:
+    driver: bridge
